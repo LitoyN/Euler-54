@@ -11,6 +11,7 @@
 #include <fstream>
 #include <cmath>
 #include <algorithm>
+#include "PokerHand.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ int boolToDec(bool array[]);
 
 char value;
 char suit;
-ifstream allHands("poker.txt");
+ifstream allHands("poker2.txt");
 char valsSuits[17] = {'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A', 'C', 'D', 'H', 'S'};
 bool card[17];
 int cardDec;
@@ -28,7 +29,7 @@ int hand[5];
 
 
 
-void parseFromFile(ifstream& pokerFile){
+int* parseFromFile(ifstream& pokerFile){
     
     
     for(int i = 0; i < 5; i++){
@@ -45,19 +46,16 @@ void parseFromFile(ifstream& pokerFile){
     }
     sort(hand, hand+5);
     
-    for(int i = 0; i < 5; i++){
-       cout<< hand[i] << ", ";
-    }
-    cout<<endl;
+    return hand;
 }
 
 int boolToDec(bool cardArray[]){
     cardDec = 0;
     for(int i = 0; i < 17; i++){
         if(cardArray[i])
-            cardDec += pow(2, 16-i);
+            cardDec += pow(2, 17-i);
     }
-    return cardDec;
+    return cardDec/2;
     
 }
 
@@ -66,10 +64,15 @@ int boolToDec(bool cardArray[]){
  */
 int main(int argc, char** argv) {
 
+    //PokerHand hand1(hand);
     while(allHands){
         parseFromFile(allHands);
-        //hand1(parseFromFile(allHands));
-        //hand2(parseFromFile(allHands));
+        PokerHand hand1(parseFromFile(allHands));
+        hand1.printHand();
+        //if(hand1.rankHand() == 666)
+            //hand1.printHand();
+        //PokerHand hand2(parseFromFile(allHands));
+        //hand2.printHand();
     }
 
     return 0;

@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.h</itemPath>
+      <itemPath>C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.cpp</itemPath>
+      <itemPath>C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -38,12 +38,12 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.cpp"
+      <item path="C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.h"
+      <item path="C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -71,12 +71,12 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.cpp"
+      <item path="C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="C:/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.h"
+      <item path="C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.h"
             ex="false"
             tool="3"
             flavor2="0">

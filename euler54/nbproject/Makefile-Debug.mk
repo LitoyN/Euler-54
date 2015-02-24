@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1982384233/PokerHand.o \
+	${OBJECTDIR}/_ext/983060150/PokerHand.o \
 	${OBJECTDIR}/main.o
 
 
@@ -63,10 +63,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/euler54.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/euler54 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/1982384233/PokerHand.o: /C/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1982384233
+${OBJECTDIR}/_ext/983060150/PokerHand.o: /C/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/983060150
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1982384233/PokerHand.o /C/Users/elliot/Documents/NetBeansProjects/euler54/PokerHand.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/983060150/PokerHand.o /C/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

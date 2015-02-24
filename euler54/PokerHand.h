@@ -9,10 +9,24 @@
 #define	POKERHAND_H
 
 class PokerHand {
+    
+    
 public:
-    PokerHand(int array[]);
+    PokerHand(int* array);
     void printHand();
+    int rankHand();
+    
+    
 private:
+    bool royalFlush();
+    bool straightFlush();
+    bool fourOfKind();
+    bool fullHouse();
+    bool straight();
+    bool flush();
+    bool threeOfKind();
+    bool twoPair();
+    bool pair();
 
 };
 
