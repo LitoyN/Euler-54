@@ -39,7 +39,7 @@ void PokerHand::printHand(){
 }
 
 int PokerHand::rankHand(){
-    if(royalFlush())
+    if(fourOfKind())
         return 666;
     else
         return 141414;
@@ -59,7 +59,7 @@ bool PokerHand::straightFlush(){
         return true;
     else
         return false;
-}
+}//straightFlush works
 
 bool PokerHand::fourOfKind(){
     if(((sumAll - card1) == (4 * card1 + 11)|| (sumAll - card1) == (4 * card5 -17)) ||
@@ -68,7 +68,7 @@ bool PokerHand::fourOfKind(){
     else
         return false;
     
-}
+}//fourOfKind works
 
 
 bool PokerHand::fullHouse(){

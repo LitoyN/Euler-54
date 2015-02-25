@@ -31,7 +31,7 @@ int hand[5];
 
 int* parseFromFile(ifstream& pokerFile){
     
-    
+    //int sum = 0;
     for(int i = 0; i < 5; i++){
         pokerFile >> value;
         pokerFile >> suit;
@@ -43,9 +43,10 @@ int* parseFromFile(ifstream& pokerFile){
         }
         hand[i] = boolToDec(card);
         //cout << hand[i] << ", ";
+        //sum += hand[i];
     }
     sort(hand, hand+5);
-    
+    //cout<<endl << sum<<endl;
     return hand;
 }
 
@@ -66,7 +67,7 @@ int main(int argc, char** argv) {
 
     //PokerHand hand1(hand);
     while(allHands){
-        parseFromFile(allHands);
+        //parseFromFile(allHands);
         PokerHand hand1(parseFromFile(allHands));
         hand1.printHand();
         //if(hand1.rankHand() == 666)
