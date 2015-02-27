@@ -39,7 +39,7 @@ void PokerHand::printHand(){
 }
 
 int PokerHand::rankHand(){
-    if(fourOfKind())
+    if(straight())
         return 666;
     else
         return 141414;
@@ -79,9 +79,11 @@ bool PokerHand::fullHouse(){
 }//fullHouse works
 
 bool PokerHand::straight(){
-    bool straight;
+    bool straight = false;
+    //int i = 0;
     for(int i = 0; i < 4; i++){
-        if(cards[i] >= (cards[i+1]*2-8) && cards[i] <= (cards[i+1]*2-1))
+        if((cards[i+1] - (cards[i]*2-8) <=14 && cards[i+1] - (cards[i]*2-8) >= -7) && 
+                (cards[i+1] - (cards[i]*2-1) <= 7 && cards[i+1] - (cards[i]*2-1) >= -14))
             straight = true;
         else
             return false;

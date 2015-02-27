@@ -69,9 +69,9 @@ int main(int argc, char** argv) {
     while(allHands){
         //parseFromFile(allHands);
         PokerHand hand1(parseFromFile(allHands));
-        hand1.printHand();
-        //if(hand1.rankHand() == 666)
-            //hand1.printHand();
+        //hand1.printHand();
+        if(hand1.rankHand() == 666)
+            hand1.printHand();
         //PokerHand hand2(parseFromFile(allHands));
         //hand2.printHand();
     }
