@@ -15,9 +15,19 @@ public:
     PokerHand(int* array);
     void printHand();
     int rankHand();
-    
+    int getHighest();
+    int getCard(int index);
+    int getCompare();
     
 private:
+    int cards[5];
+    int compareVal;
+    int card1;
+    int card2;
+    int card3;
+    int card4;
+    int card5;
+    int sumAll;
     bool royalFlush();
     bool straightFlush();
     bool fourOfKind();

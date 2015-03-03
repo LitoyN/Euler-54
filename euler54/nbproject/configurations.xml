@@ -37,6 +37,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
       <item path="C:/Users/elliot/Documents/GitHub/Euler-54/euler54/PokerHand.cpp"
             ex="false"
