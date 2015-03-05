@@ -19,14 +19,8 @@ PokerHand::PokerHand(int* cardsInHand) {
     compareVal = -1;
     for(int i = 0; i < 5; i++){
         cards[i] = cardsInHand[i];
-    }
-    card1 = cardsInHand[0];
-    card2 = cardsInHand[1];
-    card3 = cardsInHand[2];
-    card4 = cardsInHand[3];
-    card5 = cardsInHand[4];
-    for(int i = 0; i < 5; i++)
         sumAll += cardsInHand[i];
+    }
     
 }
 
@@ -55,13 +49,14 @@ int PokerHand::rankHand(){
         return 2;
     else if(pair())
         return 1;
-    else
+    else{
         compareVal = 0;
         return 0;
+    }
 }
 
 int PokerHand::getHighest(){
-    return card1;
+    return cards[0];
 }
 
 int PokerHand::getCard(int index){
@@ -73,8 +68,8 @@ int PokerHand::getCompare(){
 }
 
 bool PokerHand::royalFlush(){
-    if((sumAll == (31 * card1 - 26) || sumAll == (31 * card1 - 52) ||
-            sumAll == (31 * card1 - 104) || sumAll == (31 * card1 - 208)) && card1 < 25){
+    if((sumAll == (31 * cards[0] - 26) || sumAll == (31 * cards[0] - 52) ||
+            sumAll == (31 * cards[0] - 104) || sumAll == (31 * cards[0] - 208)) && cards[0] < 25){
         return true;
     }
     else
@@ -82,8 +77,8 @@ bool PokerHand::royalFlush(){
 }//royalFlush works
 
 bool PokerHand::straightFlush(){
-    if(sumAll == (31 * card1 - 26) || sumAll == (31 * card1 - 52) ||
-            sumAll == (31 * card1 - 104) || sumAll == (31 * card1 - 208)){
+    if(sumAll == (31 * cards[0] - 26) || sumAll == (31 * cards[0] - 52) ||
+            sumAll == (31 * cards[0] - 104) || sumAll == (31 * cards[0] - 208)){
         compareVal = 0;
         return true;
     }
@@ -92,8 +87,8 @@ bool PokerHand::straightFlush(){
 }//straightFlush works
 
 bool PokerHand::fourOfKind(){
-    if(((sumAll - card1) == (4 * card1 + 11)|| (sumAll - card1) == (4 * card5 -17)) ||
-            ((sumAll - card5) == (4 * card1 + 11)|| (sumAll - card5) == (4 * card5 -17))){
+    if(((sumAll - cards[0]) == (4 * cards[0] + 11)|| (sumAll - cards[0]) == (4 * cards[4] -17)) ||
+            ((sumAll - cards[4]) == (4 * cards[0] + 11)|| (sumAll - cards[4]) == (4 * cards[4] -17))){
         compareVal = 3;
         return true;
     }
@@ -104,7 +99,7 @@ bool PokerHand::fourOfKind(){
 
 
 bool PokerHand::fullHouse(){
-    if((card2-card1 <= 7 && card5-card3 <= 7) || (card3-card1 <= 7 && card5-card4 <= 7)){
+    if((cards[1]-cards[0] <= 7 && cards[4]-cards[2] <= 7) || (cards[2]-cards[0] <= 7 && cards[4]-cards[3] <= 7)){
         compareVal = 2;
         return true;
     }
@@ -116,8 +111,8 @@ bool PokerHand::straight(){
     bool straight = false;
     //int i = 0;
     for(int i = 0; i < 4; i++){
-        if((cards[i+1] - (cards[i]*2-8) <=14 && cards[i+1] - (cards[i]*2-8) >= -7) && 
-                (cards[i+1] - (cards[i]*2-1) <= 7 && cards[i+1] - (cards[i]*2-1) >= -14)){
+        if(cards[i+1] - (cards[i]*2-8) <=14 && cards[i+1] - (cards[i]*2-8) >= -7 && 
+                cards[i+1] - (cards[i]*2-1) <= 7 && cards[i+1] - (cards[i]*2-1) >= -14){
             compareVal = 0;
             straight = true;
         }
@@ -141,9 +136,9 @@ bool PokerHand::flush(){
 }//flush works
 
 bool PokerHand::threeOfKind(){
-    if((card3-card2 <7 && card2-card1 < card3-card2)||
-            (card5-card4 <7 && card4-card2 < card5-card4)||
-                (card3-card1 <=7 || card5-card3 <=7)){
+    if((cards[2]-cards[1] <7 && cards[1]-cards[0] < cards[2]-cards[1])||
+            (cards[4]-cards[3] <7 && cards[3]-cards[1] < cards[4]-cards[3])||
+                (cards[2]-cards[0] <=7 || cards[4]-cards[2] <=7)){
         compareVal = 2;
         return true;
     }
@@ -152,8 +147,8 @@ bool PokerHand::threeOfKind(){
 }//threeOfKind works
 
 bool PokerHand::twoPair(){
-    if((card2-card1 <= 7 && (card5-card4 <= 7 || card4-card3 <=7))||
-            card5-card4 <=7 && (card3-card2 <=7)){
+    if((cards[1]-cards[0] <= 7 && (cards[4]-cards[3] <= 7 || cards[3]-cards[2] <=7))||
+            cards[4]-cards[3] <=7 && (cards[2]-cards[1] <=7)){
         compareVal = 3;
         return true;
     }
